@@ -1,26 +1,33 @@
 Rails.application.routes.draw do
+
   mount Ckeditor::Engine => '/ckeditor'
   get 'password_resets/new'
 
   get 'password_resets/edit'
 
   get 'sessions/new'
-  get 'contact' => 'static_pages#contact'
+  get 'contacted' => 'static_pages#contact'
   get 'resume' => 'static_pages#resume'
   get 'signup'  => 'users#new'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
+  get 'courses' => 'courses#index'
+
+
+  get 'contact', to: 'messages#new#contact', as: 'contact'
+  post 'contact', to: 'messages#create'
+  get 'microposts/:id/' => 'microposts#ideas', as: :ideas
 
   
   resources :users
   resources :microposts
   resources :password_resets,     only: [:new, :create, :edit, :update]
+  resources :courses, only: [:index, :show]
 
 
   root 'microposts#index'
 
-  get 'microposts/:id/' => 'microposts#ideas', as: :ideas
 
 
 

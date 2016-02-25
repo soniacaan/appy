@@ -1,0 +1,4 @@
+class HttpartyController < ApplicationController
+	
+
+end

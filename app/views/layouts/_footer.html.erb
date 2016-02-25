@@ -1,6 +1,10 @@
+<footer>
 <div class="container">
 <div class="row">
-<div class="footer">
+<div class="col-md-12">
+  
+</div>
+<div>
      <% if logged_in? %>
     <small>
         <%= link_to "Log out", logout_path, method: "delete", :class => "btn btn-primary btn-sm active" %>
@@ -12,14 +16,21 @@
     <% end %>
       <nav>
         <ul>
-          <li>  </li>
-          <li>
-          <%= link_to image_tag("rails.png", alt: "Rails logo"),
-                'http://rubyonrails.org/' %></li>
-          <li><%= link_to "Contact", '#' %></li>
-          <li><a href="http://news.railstutorial.org/">News</a></li>
-        </ul>
+           <li>
+             <%= link_to image_tag("twitter.png", size: "50x50",alt: "@sonia_here"),
+                'https://twitter.com/sonia_here' %>
+          </li>
+         <li> <%= link_to image_tag("linkedinl.png", alt: "caansonia"),
+                'https://ca.linkedin.com/in/caansonia' %>
+          </li>
+          <li><%= link_to image_tag("instagram.png", size: "50x50", alt: "soniacaan"),
+                'https://www.instagram.com/soniacaan/' %>
+          </li>
+          
+          </ul>
       </nav>
 </div>
 </div>
 </div>
+</footer>
+

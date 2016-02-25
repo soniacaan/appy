@@ -1,5 +1,8 @@
 <div class="container">
 <div class="row">
+<div class="col-md-12">
+<h0 id="top" name="top"></h0>
+
 <%= form_for(@micropost, html: { multipart: true }) do |f| %>
   <% if @micropost.errors.any? %>
     <div id="error_explanation">
@@ -20,16 +23,16 @@
     <%= f.label :body %><br>
     <%= f.cktext_area :body, :ckeditor => {:language => 'us'} %>
   </div>
- <div class="picture">
-    <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', :class => "btn btn-primary btn-sm button active" %>
+ <div>
+    <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', :class => "btn btn-primary active" %>
   </div>
-  <div class="btn btn-primary btn-sm">
-    <%= f.submit, :class => "btn btn-primary btn-sm button active" %>
+  <div>
+    <p class="btn btn-primary active"><%= f.submit %></a>
   </div>
 <% end %>
 </div>
 </div>
-
+</div>
 
 <script type="text/javascript">
   $('#micropost_picture').bind('change', function() {

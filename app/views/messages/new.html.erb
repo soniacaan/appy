@@ -1,0 +1,38 @@
+ 
+
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+  <p0 id="contact" name="contact"></p0>
+  <p class="title-header"> Contact Me</p>
+</div>
+<div class="col-md-2">
+</div>
+<div class="col-md-8">
+<%= form_for @message, url: contact_path(@message, :anchor => 'form') do |message_form| %>
+
+  <fieldset>
+    <div class="field">
+      <%= message_form.text_field :name, placeholder: "Name" %>
+    </div>
+    
+    <div class="field">
+      <%= message_form.email_field :email, placeholder: "Email"%>
+    </div>
+    
+    <div class="field">
+      <%= message_form.text_area :content, placeholder: "Message"%>
+    </div>
+  </fieldset>
+  
+  <fieldset>
+    <div class="field">
+      <%= message_form.submit "Send" %>
+    </div>
+  </fieldset>
+<% end %>
+</div>
+  <div class="col-md-2">
+  </div>
+</div>
+</div>

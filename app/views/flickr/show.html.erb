@@ -1,0 +1,6 @@
+<h1>Recent Photos of <%= @user %></h1>
+<% @photos.each do |photo| %>
+    <p><%= photo.title %></p>
+    <p><%= image_tag photo.url %></p>
+    <!--TODO Make images actualy show-->
+<% end %>
